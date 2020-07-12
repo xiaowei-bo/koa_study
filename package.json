@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^9.1.0",
+    "koa-swig": "^2.2.1"
+  },
+  "name": "koa_study",
+  "version": "1.0.0",
+  "description": "koa_study",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa",
+    "node",
+    "es6"
+  ],
+  "author": "yibo.wei",
+  "license": "ISC"
+}

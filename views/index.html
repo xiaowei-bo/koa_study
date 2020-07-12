@@ -1,0 +1,18 @@
+{% extends './common_file/layout.html' %}
+
+{% block title %}网页集合{% endblock %}
+
+{% block head %}
+{% parent %}
+<!--<link rel="stylesheet" href="custom.css">-->
+{% endblock %}
+
+{% block content %}
+<ul>
+    {% for router in routerList %}
+    <li>
+        <a href="{{router.url}}" target="_blank">{{router.url}}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
