@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fad09092-7dee-46a2-b895-cdc8ebd56bde" name="Default Changelist" comment="" />
+    <list default="true" id="fad09092-7dee-46a2-b895-cdc8ebd56bde" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/common_file/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/_common/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/hello/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/hello/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,12 +20,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1eTfnH2sXlYz0ygvkGfxLStRKpL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -24,6 +38,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/views/test_2" />
@@ -48,7 +63,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1594350668874</updated>
-      <workItem from="1594350670386" duration="26806000" />
+      <workItem from="1594350670386" duration="30105000" />
+      <workItem from="1594556078762" duration="11000" />
+      <workItem from="1594611107872" duration="3000" />
+      <workItem from="1596278555834" duration="3815000" />
     </task>
     <servers />
   </component>
@@ -56,6 +74,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="386" y="207" width="667" height="486" key="find.popup" timestamp="1596288379191">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="386" y="207" width="667" height="486" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1596288379191" />
     <state x="114" y="176" key="new project wizard" timestamp="1594467846493">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
