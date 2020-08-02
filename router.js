@@ -1,7 +1,6 @@
 const KoaRouter = require('koa-router'); // 路由模块
 const router = new KoaRouter();
-const routerList = require('./controller/router');
-console.log(routerList);
+const routerList = require('./controller/page_router.js');
 
 module.exports = (app) => {
     for (let routerObj of routerList) {
@@ -20,5 +19,5 @@ module.exports = (app) => {
         ctx.body = await ctx.render('index.html', { routerList });
         await next();
     });
-    app.use(router.routes());
+    app.use(router.routes()).use(router.allowedMethods());
 };
