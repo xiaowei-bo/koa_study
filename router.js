@@ -15,7 +15,7 @@ module.exports = (app) => {
     }
 
     // 路由集合页
-    router.get('/views/router_list.vpage', async (ctx, next) => {
+    router.get('/views/router_list.paper', async (ctx, next) => {
         ctx.body = await ctx.render('index.html', { routerList });
         await next();
     });
