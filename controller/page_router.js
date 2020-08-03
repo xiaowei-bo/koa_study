@@ -26,11 +26,12 @@ getFile('./views', 'html', htmlFiles);
 
 htmlFiles.forEach((item) => {
     const src = item.replace('./views/', '');
+    const templateSrc = src.replace('.html', '');
     const obj = {
         type: 'GET',
         url: `/views/${src}`,
         handler: async (ctx, next) => {
-            ctx.body = await ctx.render(src);
+            await ctx.render(templateSrc);
             await next();
         }
     };

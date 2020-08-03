@@ -16,7 +16,11 @@ module.exports = (app) => {
 
     // 路由集合页
     router.get('/views/router_list.paper', async (ctx, next) => {
-        ctx.body = await ctx.render('index.html', { routerList });
+        await ctx.render('index', { routerList });
+        await next();
+    });
+    router.get('/', async (ctx, next) => {
+        await ctx.render('index', { routerList });
         await next();
     });
     app.use(router.routes()).use(router.allowedMethods());
