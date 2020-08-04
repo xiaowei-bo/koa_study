@@ -2,8 +2,11 @@
   "dependencies": {
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
+    "koa-logger": "^3.2.1",
     "koa-nunjucks-2": "^3.0.2",
-    "koa-router": "^9.1.0"
+    "koa-router": "^9.1.0",
+    "koa-static": "^5.0.0",
+    "moment": "^2.27.0"
   },
   "name": "koa_study",
   "version": "1.0.0",
