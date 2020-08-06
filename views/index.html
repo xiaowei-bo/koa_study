@@ -1,14 +1,19 @@
 {% extends './_common/layout.html' %}
 
 {% block head %}
-<link href="home.css">
+<link rel="stylesheet" href="home.css">
 {% endblock %}
 
 {% block body %}
-<h1>home 页面内容kkkkkkkkkkkkkkk</h1>
-<p>{{routerList}}</p>
+<h1>路由集合</h1>
+<ul>
+    {% for router in routerList %}
+    <li>
+        <a href="{{router.url}}">{{router.url}}</a>
+    </li>
+    {% endfor %}
+</ul>
 {% endblock %}
 
 {% block content %}
-<script src="home.js"></script>
 {% endblock%}

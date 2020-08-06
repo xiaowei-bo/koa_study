@@ -19,6 +19,24 @@ app.use(nunjucks({ // 为 app.context 提供一个 render 方法
     }
 }));
 
+app.use(async (ctx, next) => {
+    try {
+        if(path.extname(ctx.request.url) === '.paper') {
+            switch (ctx.response.status) {
+                case 404:
+                    await ctx.render('error/404');
+                    break;
+                case 500:
+                    await ctx.render('error/500');
+                    break;
+            }
+        }
+        await next();
+    } catch (err) {
+
+    }
+});
+
 app.use(bodyParser());
 router(app);
 app.use(server('.'));

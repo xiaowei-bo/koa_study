@@ -20,7 +20,11 @@ module.exports = (app) => {
         await next();
     });
     router.get('/', async (ctx, next) => {
-        await ctx.render('index', { routerList });
+        ctx.redirect('/views/router_list.paper');
+        await next();
+    });
+    router.get('/views/error/404.paper', async (ctx, next) => {
+        await ctx.render('views/error/404.html');
         await next();
     });
     app.use(router.routes()).use(router.allowedMethods());
