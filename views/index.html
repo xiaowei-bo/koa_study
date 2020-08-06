@@ -13,6 +13,16 @@
     </li>
     {% endfor %}
 </ul>
+{% if logined %}
+<p>已登录</p>
+<p>
+    <a href="/logout.paper">注销登录 </a>
+</p>
+{% else %}
+<p>
+    <a href="/views/login.paper">未登录，请前往登录 </a>
+</p>
+{% endif %}
 {% endblock %}
 
 {% block content %}

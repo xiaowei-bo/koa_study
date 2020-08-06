@@ -1,0 +1,20 @@
+{% extends './_common/layout.html' %}
+
+{% block head %}
+<title>登录</title>
+{% endblock %}
+
+{% block body %}
+<h1>登录</h1>
+<form action="/login.paper" method="post">
+    <p>
+        u_id: <input type="text" name="u_id" />
+    </p>
+    <p>
+        u_pass: <input type="text" name="u_pass" />
+    </p>
+    <input type="submit" value="Submit" />
+</form>
+
+
+{% endblock %}

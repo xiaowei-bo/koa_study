@@ -1,7 +1,7 @@
 const config = require('./config.js');
 const fs = require('fs');
 const path = require('path');
-let routerList = [];
+let page_router = [];
 
 /**
  * @param {String} dirName 目标目录
@@ -36,10 +36,10 @@ htmlFiles.forEach((item) => {
             await next();
         }
     };
-    routerList.push(obj);
+    page_router.push(obj);
 });
 
 // 路由统一后缀，约定即可，方便管理（无实际意义）
-routerList.map(item => item.url = item.url.replace('.html', config.suffix));
+page_router.map(item => item.url = item.url.replace('.html', config.suffix));
 
-module.exports = routerList;
+module.exports = page_router;
