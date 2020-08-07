@@ -6,15 +6,37 @@
 
 {% block body %}
 <h1>登录</h1>
-<form action="/login.paper" method="post">
+<div>
     <p>
-        u_id: <input type="text" name="u_id" />
+        u_id: <input type="text" id="u_id" name="u_id" />
     </p>
     <p>
-        u_pass: <input type="text" name="u_pass" />
+        u_pass: <input type="text" id="u_pass" name="u_pass" />
     </p>
-    <input type="submit" value="Submit" />
-</form>
+    <div onclick="loginHandler()">登录</div>
+</div>
 
 
+{% endblock %}
+{% block content %}
+<script type="text/javascript">
+    function loginHandler() {
+        const _data = {
+            u_id: $('#u_id').val(),
+            u_pass: $('#u_pass').val()
+        };
+        $.ajax({
+            url: '/login.paper',
+            type: 'POST',
+            data: _data,
+            dataType: 'json',
+            success: (res) => {
+                console.log(res)
+                if(res.success) {
+                    window.location.replace('/');
+                }
+            }
+        });
+    }
+</script>
 {% endblock %}

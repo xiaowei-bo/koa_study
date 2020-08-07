@@ -16,7 +16,7 @@
 {% if logined %}
 <p>已登录</p>
 <p>
-    <a href="/logout.paper">注销登录 </a>
+    <a onclick="logoutHandler()">注销登录 </a>
 </p>
 {% else %}
 <p>
@@ -26,4 +26,17 @@
 {% endblock %}
 
 {% block content %}
+<script type="text/javascript">
+    function logoutHandler() {
+        $.ajax({
+            url: '/logout.paper',
+            success: (res) => {
+                console.log(res)
+                if(res.success) {
+                    window.location.replace('/');
+                }
+            }
+        });
+    }
+</script>
 {% endblock%}
