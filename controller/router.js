@@ -1,9 +1,8 @@
 const KoaRouter = require('koa-router'); // 路由模块
 const router = new KoaRouter();
-const page_router = require('./controller/page_router.js');
-const logic_router = require('./controller/logic_router.js');
+const page_router = require('./module/page_router.js');
+const logic_router = require('./module/logic_router.js');
 const routerList = [...page_router, ...logic_router];
-console.log(routerList)
 
 module.exports = (app) => {
     for (let routerObj of routerList) {
@@ -25,14 +24,6 @@ module.exports = (app) => {
             routerList: page_router,
             logined
         });
-        await next();
-    });
-    router.get('/', async (ctx, next) => {
-        ctx.redirect('/views/router_list.paper');
-        await next();
-    });
-    router.get('/views/error/404.paper', async (ctx, next) => {
-        await ctx.render('views/error/404.html');
         await next();
     });
     app.use(router.routes()).use(router.allowedMethods());

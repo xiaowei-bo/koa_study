@@ -3,7 +3,7 @@ const session = require('koa-session');
 const path = require('path');
 const nunjucks = require('koa-nunjucks-2'); // 模板引擎
 const bodyParser = require('koa-bodyparser'); // 处理 post 请求数据
-const router = require('./router.js');
+const router = require('./controller/router.js');
 const server = require('koa-static'); // 静态文件
 const logger = require('koa-logger'); // log 日志
 const moment = require('moment');
@@ -36,14 +36,14 @@ app.use(nunjucks({ // 为 app.context 提供一个 render 方法
 app.use(async (ctx, next) => {
     try {
         if(path.extname(ctx.request.url) === '.paper') {
-            /*switch (ctx.response.status) {
+            switch (ctx.response.status) {
                 case 404:
                     await ctx.render('error/404');
                     break;
                 case 500:
                     await ctx.render('error/500');
                     break;
-            }*/
+            }
         }
         await next();
     } catch (err) {

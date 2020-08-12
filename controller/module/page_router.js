@@ -1,7 +1,9 @@
-const config = require('./config.js');
+const config = require('../config.js');
 const fs = require('fs');
 const path = require('path');
 let page_router = [];
+let views_router = [];
+let other_router = [];
 
 /**
  * @param {String} dirName 目标目录
@@ -24,7 +26,6 @@ function getFile(dirName, ext, filesArr = []) {
 // 获取 views 目录下所有 html 文件路径供路由配置使用
 let htmlFiles = [];
 getFile('./views', '.html', htmlFiles);
-
 htmlFiles.forEach((item) => {
     const src = item.replace('./views/', '');
     const templateSrc = src.replace('.html', '');
@@ -36,8 +37,34 @@ htmlFiles.forEach((item) => {
             await next();
         }
     };
-    page_router.push(obj);
+    views_router.push(obj);
 });
+
+// 其他页面路由配置
+const viewsRoutersPage = { // views路由集合页
+    type: 'GET',
+    url: '/views/router_list.paper',
+    handler: async (ctx, next) => {
+        const u_id = ctx.session.u_id || 0;
+        const logined = u_id === 'test_koa_session';
+        await ctx.render('index', {
+            routerList: views_router,
+            logined
+        });
+        await next();
+    }
+};
+const indexPage = { // 主页面
+    type: 'GET',
+    url: '/',
+    handler: async (ctx, next) => {
+        ctx.redirect('/views/router_list.paper');
+        await next();
+    }
+};
+
+other_router = [viewsRoutersPage, indexPage];
+page_router = [...views_router, ...other_router];
 
 // 路由统一后缀，约定即可，方便管理（无实际意义）
 page_router.map(item => item.url = item.url.replace('.html', config.suffix));
