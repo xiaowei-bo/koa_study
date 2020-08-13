@@ -8,6 +8,7 @@ const server = require('koa-static'); // 静态文件
 const logger = require('koa-logger'); // log 日志
 const moment = require('moment');
 
+
 // 若项目中使用了不下一种模板引擎 如 swig ejs nunjucks 等等 ，可引入 co-view 组织模板引擎解决
 
 const app = new Koa();

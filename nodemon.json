@@ -1,0 +1,12 @@
+{
+    "restartable": "rs",
+    "verbose": true,
+    "watch": [
+        "controller/",
+        "service/",
+        "views/",
+        "app.js"
+    ],
+    "delay": "1000",
+    "ext": "js njk html json"
+}
