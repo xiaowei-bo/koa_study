@@ -1,14 +1,42 @@
 {% extends './_common/layout.html' %}
 
 {% block head %}
-<link href="home.css">
+<link rel="stylesheet" href="home.css">
 {% endblock %}
 
 {% block body %}
-<h1>home 页面内容kkkkkkkkkkkkkkk</h1>
-<p>{{routerList}}</p>
+<h1>路由集合</h1>
+<ul>
+    {% for router in routerList %}
+    <li>
+        <a href="{{router.url}}">{{router.url}}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% if logined %}
+<p>已登录</p>
+<p>
+    <a onclick="logoutHandler()">注销登录 </a>
+</p>
+{% else %}
+<p>
+    <a href="/views/login.paper">未登录，请前往登录 </a>
+</p>
+{% endif %}
 {% endblock %}
 
 {% block content %}
-<script src="home.js"></script>
+<script type="text/javascript">
+    function logoutHandler() {
+        $.ajax({
+            url: '/logout.paper',
+            success: (res) => {
+                console.log(res)
+                if(res.success) {
+                    window.location.replace('/');
+                }
+            }
+        });
+    }
+</script>
 {% endblock%}
