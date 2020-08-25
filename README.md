@@ -1,14 +1,29 @@
-####
-Koa, 
+# koa 项目
+=============================
+## koa-router nunjucks koa-static koa-session  
+-----------------------------
 
-Koa-router,  路由分发
+* * *
 
-Koa-nunjucks-2  模板引擎
-####
+    -- config  
+        --index.js
+        
+    -- controller 
+        --module
+            --logic_router.js
+            --page_router.js
+        --router.js
+        
+    -- models
+    
+    -- service
+    
+    -- sh
+    
+    -- src
+    
+    -- views
+    
+    -- app.js
 
-
-
-
-
-
-ext  .paper
+* * *

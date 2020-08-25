@@ -1,4 +1,4 @@
-const config = require('../config.js');
+const { SUFFIX } = require('../../config/index.js');
 const fs = require('fs');
 const path = require('path');
 let page_router = [];
@@ -67,6 +67,6 @@ other_router = [viewsRoutersPage, indexPage];
 page_router = [...views_router, ...other_router];
 
 // 路由统一后缀，约定即可，方便管理（无实际意义）
-page_router.map(item => item.url = item.url.replace('.html', config.suffix));
+page_router.map(item => item.url = item.url.replace('.html', SUFFIX));
 
 module.exports = page_router;

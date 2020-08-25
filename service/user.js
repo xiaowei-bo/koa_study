@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const DB_URL = 'mongodb://localhost:27017/firstBlood';
-const { UserInit } = require('../controller/module/schema.js');
+const { DB_URL } = require('../config/index.js');
+const { UserInit } = require('../models/user.js');
 const { sucResHandler, failResHandler} = require('../controller/module/common.js');
 
 function region(userInfo) {
@@ -8,8 +8,8 @@ function region(userInfo) {
         return failResHandler('参数错误');
     }
     mongoose.connect(DB_URL, { useNewUrlParser: true }, (err, res)=> {
-        if(!err){
-            console.log(res)
+        if(err){
+            console.log(err);
         }
     });
 
