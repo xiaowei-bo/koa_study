@@ -1,0 +1,27 @@
+{% import 'src/common/html/plugin.html' as plugin %}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% for css in cssList %}
+        {{ plugin.load(type = 'css', src = css) }}
+    {% endfor %}
+    
+    {% for js in headJsList %}
+        {{ plugin.load(type = 'js', src = js) }}
+    {% endfor %}
+
+    {% block head %}{% endblock %}
+</head>
+<body>
+    {% block body %}{% endblock %}
+    
+    {% for js in footJsList %}
+        {{ plugin.load(type = 'js', src = js) }}
+    {% endfor %}
+
+    {% block foot %}{% endblock %}
+</body>
+</html>

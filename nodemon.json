@@ -3,10 +3,11 @@
     "verbose": true,
     "watch": [
         "config/",
-        "models/",
         "controller/",
+        "models/",
+        "router/",
         "service/",
-        "views/",
+        "src/**/*.html",
         "app.js"
     ],
     "delay": "1000",

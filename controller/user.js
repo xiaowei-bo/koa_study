@@ -1,19 +1,12 @@
-const userService = require('../../service/user.js');
-// 注册接口
-const region = {
-    type: 'POST',
-    url: `/user/region.paper`,
-    handler: async (ctx, next) => {
+const userService = require('../service/user.js');
+
+module.exports = {
+    region: async (ctx, next) => {
         const regionUser = ctx.request.body;
         ctx.body = userService.region(regionUser);
         await next();
-    }
-};
-// 登录接口
-const login = {
-    type: 'POST',
-    url: `/user/login.paper`,
-    handler: async (ctx, next) => {
+    },
+    login: async (ctx, next) => {
         const loginObj = ctx.request.body;
         if(loginObj.u_id === 'yibo.wei' && loginObj.u_pass === 'koa_study') {
             ctx.session.u_id = 'test_koa_session';
@@ -28,13 +21,8 @@ const login = {
             };
         }
         await next();
-    }
-};
-// 注销登录接口
-const logout = {
-    type: 'GET',
-    url: `/user/logout.paper`,
-    handler: async (ctx, next) => {
+    },
+    logout: async (ctx, next) => {
         if(ctx.session.u_id === 'test_koa_session') {
             ctx.session.u_id = '';
             ctx.body = {
@@ -49,7 +37,4 @@ const logout = {
         }
         await next();
     }
-};
-
-const logic_router = [region, login, logout];
-module.exports = logic_router;
+}

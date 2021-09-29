@@ -1,0 +1,14 @@
+{% set pluginSrcMap = {
+    'vue': 'https://cdn.bootcdn.net/ajax/libs/vue/2.6.0/vue.min.js',
+    'react': 'https://cdn.bootcdn.net/ajax/libs/react/16.9.0/umd/react.production.min.js'
+} %}
+
+
+
+{% macro load(type = 'js', src) %}
+    {% if type === 'css' %}
+    <link rel="stylesheet" href="{{pluginSrcMap[src]}}">
+    {% else %}
+    <script src="{{pluginSrcMap[src]}}"></script>
+    {% endif %}
+{% endmacro %}

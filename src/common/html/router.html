@@ -1,0 +1,12 @@
+{% set headJsList = [] %}
+{% set footJsList = ['vue'] %}
+{% set cssList = [] %}
+{% extends "common/html/layout.html" %}
+
+{% block body %}
+<div id="app">
+    {% for router in routerList %}
+    <a href="{{router}}" target="_blank">{{router}}</a>
+    {% endfor %}
+</div>
+{% endblock %}
