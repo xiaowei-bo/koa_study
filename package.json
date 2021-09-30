@@ -3,6 +3,7 @@
     "glob": "^7.2.0",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
+    "koa-compress": "^5.1.0",
     "koa-logger": "^3.2.1",
     "koa-router": "^9.1.0",
     "koa-session": "^6.0.0",
@@ -33,6 +34,7 @@
     "optimize-css-assets-webpack-plugin": "5.0.3",
     "os": "^0.1.2",
     "postcss-loader": "3.0.0",
+    "progress-bar-webpack-plugin": "^2.1.0",
     "sass-loader": "10.0.2",
     "simple-nunjucks-loader": "2.0.3",
     "speed-measure-webpack-plugin": "^1.5.0",
@@ -46,7 +48,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=dev nodemon build/start.js --config nodemon.json",
     "build": "cross-env NODE_ENV=dev node build/build.js",
-    "server": "cross-env NODE_ENV=dev nodemon app.js --config nodemon.json",
+    "server:dev": "cross-env NODE_ENV=dev nodemon app.js --config nodemon.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

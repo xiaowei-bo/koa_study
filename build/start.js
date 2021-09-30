@@ -1,5 +1,4 @@
 const Koa = require('koa');
-const path = require('path');
 const bodyParser = require('koa-bodyparser'); // 处理 post 请求数据
 const router = require('../router/index.js');
 const server = require('koa-static'); // 静态文件
@@ -12,7 +11,14 @@ const compiler = webpack(config);
 const app = new Koa();
 
 const initServer = async() => {
-    const middleware = await koaWebpack({ compiler });
+    const compress = require('koa-compress');
+    app.use(compress({
+        threshold: 1024
+    }));
+    const middleware = await koaWebpack({ compiler, devMiddleware: {
+        quiet: true,
+        stats: "errors-only"
+    } });
     app.use(middleware);
     app.use(bodyParser());
     router(app, compiler);

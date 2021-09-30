@@ -8,6 +8,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require("autoprefixer");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
  
 // 获取环境信息
 // dev:开发 test:测试 staging:预发布  production:线上
@@ -51,6 +52,9 @@ const { entry, htmlPluginList } = getEntry();
 module.exports = {
     mode: "development",
     entry,
+    devServer: {
+        clientLogLevel: "none",
+    },
     output: {
         path: path.resolve(__dirname, "../dist"),
         filename: "[name][hash:8].js",
@@ -175,6 +179,7 @@ module.exports = {
         },
     },
     plugins: [
+        new ProgressBarPlugin(),
         new CleanWebpackPlugin(),
         new VueLoaderPlugin(),
         // css抽离成单独文件

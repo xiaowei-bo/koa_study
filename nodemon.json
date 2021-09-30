@@ -2,6 +2,7 @@
     "restartable": "rs",
     "verbose": true,
     "watch": [
+        "build/",
         "config/",
         "controller/",
         "models/",

@@ -8,6 +8,10 @@ const path = require("path");
 const app = new Koa();
 
 const initServer = () => {
+    const compress = require('koa-compress');
+    app.use(compress({
+        threshold: 1024
+    }));
     app.use(bodyParser());
     router(app);
     app.use(server(path.join(__dirname, "./dist")));

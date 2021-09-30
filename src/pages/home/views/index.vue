@@ -1,5 +1,5 @@
 <template>
-    <div>home vue</div>
+    <div>home vue update</div>
 </template>
 
 <script>
