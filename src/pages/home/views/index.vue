@@ -1,5 +1,5 @@
 <template>
-    <div>home vue update</div>
+    <div>home vue 1222</div>
 </template>
 
 <script>
@@ -10,15 +10,19 @@ export default {
         };
     },
     methods: {
-        
+        async getDemo() {
+            const res = await this.$http({
+                url: "/api/demo/index.paper",
+                method: "GET"
+            });
+            console.log(res);
+        }
     },
     created() {
-        
+        this.getDemo();
     }
 };
 </script>
 
 <style lang='scss' scoped>
-// @import '@/styles/mobileBase.scss';
-// @import '@/styles/function.scss';
 </style>

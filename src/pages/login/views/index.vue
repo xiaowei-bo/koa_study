@@ -19,6 +19,4 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-// @import '@/styles/mobileBase.scss';
-// @import '@/styles/function.scss';
 </style>

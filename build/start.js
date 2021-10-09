@@ -1,5 +1,4 @@
 const Koa = require('koa');
-const bodyParser = require('koa-bodyparser'); // 处理 post 请求数据
 const router = require('../router/index.js');
 const server = require('koa-static'); // 静态文件
 const logger = require('koa-logger'); // log 日志
@@ -20,7 +19,6 @@ const initServer = async() => {
         stats: "errors-only"
     } });
     app.use(middleware);
-    app.use(bodyParser());
     router(app, compiler);
     app.use(server('.'));
     app.use(logger((str) => {

@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo ">>> 代码千万条，规范第一条；编码不规范，同事泪两行 <<<"
+npm run lint-staged

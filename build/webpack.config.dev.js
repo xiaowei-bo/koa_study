@@ -9,9 +9,10 @@ const autoprefixer = require("autoprefixer");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const ESLintPlugin = require("eslint-webpack-plugin");
  
 // 获取环境信息
-// dev:开发 test:测试 staging:预发布  production:线上
+// dev:开发  production:线上
 const NODE_ENV = process.env.NODE_ENV || "dev";
 
 function getEntry() {
@@ -200,7 +201,11 @@ module.exports = {
         new webpack.DefinePlugin({
             ENV: JSON.stringify(NODE_ENV) //字符串
         }),
-        ...htmlPluginList
+        ...htmlPluginList,
+        new ESLintPlugin({
+            extensions: ["js", "vue"],
+            files: "src/**/*.{js,vue}",
+        })
     ],
     devServer: {
         useLocalIp: true

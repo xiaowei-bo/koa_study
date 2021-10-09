@@ -3,7 +3,7 @@
  */
 
 import { copyText } from "../utils/index";
- export default {
+export default {
     install(Vue) {
         /**
          * @description 复制指令

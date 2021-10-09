@@ -1,4 +1,19 @@
 {
+  "name": "koa_study",
+  "author": "yibo.wei",
+  "license": "ISC",
+  "version": "1.0.0",
+  "description": "koa_study",
+  "main": "app.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=dev node build/start.js",
+    "start:nodemon": "cross-env NODE_ENV=dev nodemon build/start.js --config nodemon.json",
+    "build": "cross-env NODE_ENV=dev node build/build.js",
+    "server": "pm2 start processes.json",
+    "lint": "eslint --fix src/**/*.{js,vue}",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
   "dependencies": {
     "glob": "^7.2.0",
     "koa": "^2.13.0",
@@ -9,25 +24,29 @@
     "koa-session": "^6.0.0",
     "koa-static": "^5.0.0",
     "koa-webpack": "^6.0.0",
-    "moment": "^2.27.0",
-    "mongoose": "^5.9.27"
+    "moment": "^2.27.0"
   },
-  "name": "koa_study",
-  "version": "1.0.0",
-  "description": "koa_study",
-  "main": "app.js",
   "devDependencies": {
     "@babel/core": "7.10.4",
     "@babel/preset-env": "7.10.4",
     "@babel/preset-react": "^7.14.5",
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
     "autoprefixer": "9.7.2",
+    "axios": "^0.22.0",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "8.1.0",
     "clean-webpack-plugin": "^4.0.0",
     "core-js": "3.6.5",
     "cross-env": "^7.0.3",
     "css-loader": "3.6.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^7.19.1",
+    "eslint-webpack-plugin": "^3.0.1",
     "file-loader": "6.0.0",
     "html-webpack-plugin": "4.3.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.2.1",
     "mini-css-extract-plugin": "0.9.0",
     "node-sass": "4.14.1",
     "nunjucks": "^3.2.3",
@@ -45,17 +64,21 @@
     "webpack": "4.43.0",
     "webpack-cli": "3.3.12"
   },
-  "scripts": {
-    "start": "cross-env NODE_ENV=dev nodemon build/start.js --config nodemon.json",
-    "build": "cross-env NODE_ENV=dev node build/build.js",
-    "server:dev": "cross-env NODE_ENV=dev nodemon app.js --config nodemon.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "keywords": [
     "koa",
     "node",
     "es6"
-  ],
-  "author": "yibo.wei",
-  "license": "ISC"
+  ]
 }
