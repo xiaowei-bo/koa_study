@@ -12,7 +12,8 @@ module.exports = {
     },
     globals: {
         "Vue": true,
-        "Swiper": true
+        "Swiper": true,
+        "ReactDOM": true
     },
     plugins: ["vue"],
     extends: ["eslint:recommended", "plugin:vue/essential"],
