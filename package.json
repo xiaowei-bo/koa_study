@@ -1,9 +1,19 @@
 {
-  "name": "koa_study",
-  "author": "yibo.wei",
+  "name": "simple_multi_activity",
+  "author": "xiaowei.bo",
   "license": "ISC",
   "version": "1.0.0",
-  "description": "koa_study",
+  "description": "A flexible multi-page activity project with Vue or React ",
+  "keywords": [
+    "koa",
+    "node",
+    "es6",
+    "webpack",
+    "vue",
+    "react",
+    "activity",
+    "multi-page"
+  ],
   "main": "app.js",
   "scripts": {
     "start": "cross-env NODE_ENV=dev node build/start.js",
@@ -75,10 +85,5 @@
       "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "keywords": [
-    "koa",
-    "node",
-    "es6"
-  ]
+  }
 }
