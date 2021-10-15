@@ -1,5 +1,5 @@
 const Koa = require('koa');
-const router = require('./router/index.js.js');
+const router = require('./router/index.js');
 const server = require('koa-static');
 const logger = require('koa-logger');
 const moment = require('moment');
