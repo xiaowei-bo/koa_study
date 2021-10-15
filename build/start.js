@@ -1,5 +1,5 @@
 const Koa = require('koa');
-const router = require('../router/index.js');
+const router = require('../backend/router/index.js');
 const server = require('koa-static'); // 静态文件
 const logger = require('koa-logger'); // log 日志
 const moment = require('moment');
