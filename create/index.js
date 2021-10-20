@@ -13,6 +13,6 @@ const init = async () => {
     const tarDir = path.resolve(__dirname, `../src/pages/${projectName}`);
     if(fs.existsSync(tarDir)) return console.log(chalk.red("该项目已存在，换个名称试试吧"));
     const res = await initTemplate(srcDir, tarDir);
-    console.log(chalk.green(`${projectName} 项目创建成功`));
+    console.log(chalk.green(`${projectName} 项目创建成功，请开始你的表演`));
 };
 init();
