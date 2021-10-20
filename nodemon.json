@@ -3,11 +3,8 @@
     "verbose": true,
     "watch": [
         "build/",
-        "config/",
-        "controller/",
-        "models/",
-        "router/",
-        "service/",
+        "backend/",
+        "create/",
         "src/**/*.html",
         "app.js"
     ],

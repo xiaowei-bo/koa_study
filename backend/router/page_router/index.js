@@ -37,8 +37,35 @@ const indexPage = { // 主页面
         await next();
     }
 };
-configRouter = [indexPage];
-pageRouter = [...autoRouter, ...configRouter];
+const notFoundPage = { // 404
+    type: 'GET',
+    url: '/404.paper',
+    handler: async (ctx, next) => {
+        ctx.set("Content-Type", "text/html");
+        ctx.body = fs.readFileSync(`src/common/html/404.html`);
+        await next();
+    }
+};
+const interErrorPage = { // 500
+    type: 'GET',
+    url: '/500.paper',
+    handler: async (ctx, next) => {
+        ctx.set("Content-Type", "text/html");
+        ctx.body = fs.readFileSync(`src/common/html/500.html`);
+        await next();
+    }
+};
+const routerListPage = { // router
+    type: 'GET',
+    url: '/router.paper',
+    handler: async (ctx, next) => {
+        ctx.set("Content-Type", "text/html");
+        ctx.body = fs.readFileSync(`src/common/html/router.html`);
+        await next();
+    }
+};
+configRouter = [ indexPage, notFoundPage, interErrorPage, routerListPage ];
+pageRouter = [ ...autoRouter, ...configRouter ];
 
 // 路由统一后缀，约定即可，方便管理（无实际意义）
 pageRouter.map(item => item.url = item.url.replace('.html', SUFFIX));

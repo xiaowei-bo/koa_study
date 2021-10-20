@@ -16,14 +16,13 @@
   ],
   "main": "app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=dev node build/start.js",
-    "start:nodemon": "cross-env NODE_ENV=dev nodemon build/start.js --config nodemon.json",
+    "create": "node create",
+    "start": "cross-env NODE_ENV=dev nodemon build/start.js --config nodemon.json",
     "build": "cross-env NODE_ENV=dev node build/build.js",
     "server": "pm2 start processes.json",
     "lint": "eslint --fix src/**/*.{js,vue}",
     "prepare": "husky install",
-    "lint-staged": "lint-staged",
-    "create": "node create"
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "glob": "^7.2.0",
