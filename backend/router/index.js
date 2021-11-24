@@ -8,9 +8,11 @@ const pageRouter = require('./page_router/index.js');
 const logicRouter = require('./logic_router/index.js');
 
 const routerList = [...pageRouter, ...logicRouter];
+// mock 命令启动
+const isMock = process.argv[2] === "mock";
 
 module.exports = (app, compiler) => {
-    if(compiler) { // 本地启动mock服务
+    if(isMock) { // 本地启动mock服务
         mockServer(router);
         console.log("Mock server is start >>> /mock");
     }

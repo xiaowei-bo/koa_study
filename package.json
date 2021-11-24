@@ -17,7 +17,8 @@
   "main": "app.js",
   "scripts": {
     "create": "node create",
-    "start": "cross-env NODE_ENV=dev nodemon build/start.js --config nodemon.json",
+    "start": "cross-env NODE_ENV=dev node build/start.js",
+    "start:mock": "cross-env NODE_ENV=dev node build/start.js mock",
     "build": "cross-env NODE_ENV=dev node build/build.js",
     "server": "pm2 start processes.json",
     "lint": "eslint --fix src/**/*.{js,vue}",
@@ -48,6 +49,7 @@
     "babel-loader": "8.1.0",
     "chalk": "^4.1.2",
     "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^5.1.1",
     "core-js": "3.6.5",
     "cross-env": "^7.0.3",
     "css-loader": "3.6.0",

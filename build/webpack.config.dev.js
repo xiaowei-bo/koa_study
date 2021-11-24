@@ -14,6 +14,8 @@ const ESLintPlugin = require("eslint-webpack-plugin");
 // 获取环境信息
 // dev:开发  production:线上
 const NODE_ENV = process.env.NODE_ENV || "dev";
+const isMock = process.argv[2] === "mock";
+const devType = isMock ? "MOCK" : "NORMAL";
 
 function getEntry() {
     const entry = {};
@@ -199,7 +201,8 @@ module.exports = {
         }),
         // 定义全局变量
         new webpack.DefinePlugin({
-            ENV: JSON.stringify(NODE_ENV) //字符串
+            ENV: JSON.stringify(NODE_ENV), //字符串
+            devType: JSON.stringify(devType)
         }),
         ...htmlPluginList,
         new ESLintPlugin({

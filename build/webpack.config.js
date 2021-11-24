@@ -8,10 +8,12 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require("autoprefixer");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
  
 // 获取环境信息
 // dev:开发 test:测试 staging:预发布  production:线上
 const NODE_ENV = process.env.NODE_ENV || "dev";
+const devType = "NORMAL";
 
 function getEntry() {
     const entry = {};
@@ -193,9 +195,16 @@ module.exports = {
         }),
         // 定义全局变量
         new webpack.DefinePlugin({
-            ENV: JSON.stringify(NODE_ENV) //字符串
+            ENV: JSON.stringify(NODE_ENV), //字符串
+            devType: JSON.stringify(devType)
         }),
-        ...htmlPluginList
+        ...htmlPluginList,
+        new CopyWebpackPlugin( [
+            { 
+                from: 'src',
+                to: 'src'
+            }
+        ])
     ],
     devServer: {
         useLocalIp: true

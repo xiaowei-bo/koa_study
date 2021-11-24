@@ -12,7 +12,8 @@ export default {
     methods: {
         async getDemo() {
             const res = await this.$http({
-                url: "/api/demo/index.paper",
+                url: "/api/demo/info.paper",
+                isMock: true,
                 method: "GET"
             });
             console.log(res);
